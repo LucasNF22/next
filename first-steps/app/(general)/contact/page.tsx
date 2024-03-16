@@ -8,10 +8,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
     return (
-      <main className="flex flex-col items-center p-24">
+      <main className="flex flex-col items-center p-2">
         <span className="text-5xl"> - Contact Page - </span>
-        { 1 + 1 }
-        
       </main>
     );
   }
