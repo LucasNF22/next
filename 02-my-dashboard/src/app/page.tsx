@@ -4,6 +4,6 @@ redirect
 
 export default function HomePage() {
 
-  redirect('/dashboard/counter');
+  redirect('/dashboard/main');
 
 }
