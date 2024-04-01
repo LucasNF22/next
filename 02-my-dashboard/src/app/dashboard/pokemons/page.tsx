@@ -1,5 +1,7 @@
-import { PokemonsGrid, PokemonsResponse, SimplePokemon } from "@/app/pokemons";
-import Image from 'next/image';
+import { PokemonsGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
+
+
+
 
 const getPokemons = async( limit= 20, offset= 0):Promise<SimplePokemon[]> => {
     
@@ -9,7 +11,9 @@ const getPokemons = async( limit= 20, offset= 0):Promise<SimplePokemon[]> => {
     const pokemons = data.results.map( pokemon => ({
         id: pokemon.url.split('/').at(-2)!,
         name: pokemon.name,
-    }))
+    }));
+
+    // throw new Error('Esto es un error que no deberia suceder');
 
     return pokemons;
 };
