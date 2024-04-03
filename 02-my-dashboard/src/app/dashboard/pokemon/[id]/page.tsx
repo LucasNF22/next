@@ -10,6 +10,7 @@ export default function PokemonPage({ params }: Props) {
     return (
         <div>
             <h1>Pokemon {id}</h1>
+            
         </div>
     );
 }
