@@ -14,7 +14,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
 
     return (
         <div className="mx-auto right-0 mt-2 w-60">
-            <div className="bg-white rounded overflow-hidden shadow-lg">
+            <div className="bg-white rounded overflow-hidden shadow-lg ">
                 <div className="flex flex-col items-center justify-center p-6 bg-gray-800 border-b relative">
 
                     <span className='text-white absolute right-1 top-1 w-[45px] h-[45px] border border-gray-500 rounded-sm p-[2px] flex items-center justify-center'>#{id}</span>
@@ -31,7 +31,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
 
                     <div className="mt-5">
                         <Link
-                            href={`/dashboard/pokemon/${id}`}
+                            href={`/dashboard/pokemon/${name}`}
                             className="border rounded-full py-2 px-4 text-xs font-semibold text-gray-100"
                         >
                             Ver Pókemon
@@ -51,10 +51,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
                     </Link>
 
                 </div>
-
-                <div className="">
-
-                </div>
+            
             </div>
         </div>
     )

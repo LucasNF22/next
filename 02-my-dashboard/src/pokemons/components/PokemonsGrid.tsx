@@ -22,6 +22,8 @@ export const PokemonsGrid = ({ pokemons }: Props) => {
             
         ))
     }
+
+    
   </div>
   )
 }
