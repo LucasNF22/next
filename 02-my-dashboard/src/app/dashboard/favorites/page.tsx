@@ -3,8 +3,8 @@ import { PokemonsGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 
 
 export const metadata = {
- title: '151 Pokemons',
- description: 'Listado de los primeros 151 Pokemons',
+ title: 'Favoritos',
+ description: 'Listado de los pokemons favoritos',
 };
 
 const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => {
@@ -25,13 +25,12 @@ const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => 
 
 export default async function PokemonsPage() {
 
-  const pokemons = await getPokemons(150);
-
+ 
   return (
     <div className="flex flex-col overflow-y-hidden">
 
-      <span className="text-xl m-4 text-center">Listado de Pókemons <small className="text-cyan-700">( estático )</small></span>
-      <PokemonsGrid pokemons={pokemons} />
+      <span className="text-xl m-4 text-center">Pokemons favoritos <small className="text-cyan-700">( Estado global )</small></span>
+      <PokemonsGrid pokemons={[]} />
     </div>
   );
 }
