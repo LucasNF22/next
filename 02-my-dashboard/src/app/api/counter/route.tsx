@@ -4,10 +4,11 @@ import { NextResponse } from "next/server";
 
 export async function GET( request: Request) {
     
-    console.log({ method: request.method });
+    // console.log({ method: request.method });
 
     return NextResponse.json({
-        count: 100
+        count: 100,
+        method: "GET"
     });
     
 };

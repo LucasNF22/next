@@ -7,7 +7,7 @@ import { useAppSelector } from "@/app/store";
 
 export const WidgetsGrid = () => {
 
-    const cartCount = useAppSelector( state => state.counterReducer.count );
+    const cartCount = useAppSelector( state => state.counter.count );
 
     return (
       <div className="flex flex-wrap p-4 gap-3 w-full items justify-center">
