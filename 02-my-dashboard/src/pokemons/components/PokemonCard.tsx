@@ -1,15 +1,22 @@
+"use client"
+
 import Link from 'next/link';
 import { SimplePokemon } from '../interfaces/simple-pokemon';
 import Image from 'next/image';
-import { IoHeartOutline } from 'react-icons/io5';
+import { IoHeart, IoHeartOutline } from 'react-icons/io5';
+import { useAppSelector } from '../../app/store/index';
 
 interface Props {
     pokemon: SimplePokemon;
-}
+};
+
 
 export const PokemonCard = ({ pokemon }: Props) => {
 
     const { id, name } = pokemon;
+    const isFavourite = useAppSelector( state => !!state.pokemons[id] );  // La doble negacion convierte el valor a booleano
+
+        
 
 
     return (
@@ -41,12 +48,28 @@ export const PokemonCard = ({ pokemon }: Props) => {
                 <div className="border-b">
                     <Link href="/dashboard/main" className="px-4 py-2 hover:bg-gray-100 flex items-center">
                         <div className="text-red-600">
-                            <IoHeartOutline size={20} />
+                            {
+                                isFavourite 
+                                ? ( <IoHeart size={20} /> )
+                                : ( <IoHeartOutline size={20} /> )
+                            }
                         </div>
                         <div className="pl-3">
-                            <p className="text-sm font-medium text-gray-800 leading-none">                                No es favorito
+                            <p className="text-sm font-medium text-gray-800 leading-none"> 
+                            {
+                                isFavourite 
+                                ? "Favorito"
+                                : "No es favorito"
+                            }
                             </p>
-                            <p className="text-xs text-gray-500">Añadelo a tu colección</p>
+                            
+                            <p className="text-xs text-gray-500">
+                            {
+                                isFavourite 
+                                ? "En colección"
+                                : "Añadelo a tu colección"
+                            }
+                            </p>
                         </div>
                     </Link>
 
