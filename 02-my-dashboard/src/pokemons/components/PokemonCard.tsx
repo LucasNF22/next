@@ -5,6 +5,8 @@ import { SimplePokemon } from '../interfaces/simple-pokemon';
 import Image from 'next/image';
 import { IoHeart, IoHeartOutline } from 'react-icons/io5';
 import { useAppSelector } from '../../app/store/index';
+import { useDispatch } from 'react-redux';
+import { toogleFavorite } from '@/app/store/pokemons/pokemons';
 
 interface Props {
     pokemon: SimplePokemon;
@@ -15,8 +17,13 @@ export const PokemonCard = ({ pokemon }: Props) => {
 
     const { id, name } = pokemon;
     const isFavourite = useAppSelector( state => !!state.pokemons[id] );  // La doble negacion convierte el valor a booleano
+    const dispatch = useDispatch()
 
+    const onToogle = () => {
         
+        // console.log("click", pokemon);
+        dispatch( toogleFavorite( pokemon ) )       
+    }
 
 
     return (
@@ -46,7 +53,10 @@ export const PokemonCard = ({ pokemon }: Props) => {
                     </div>
                 </div>
                 <div className="border-b">
-                    <Link href="/dashboard/main" className="px-4 py-2 hover:bg-gray-100 flex items-center">
+                    <div  
+                        className="px-4 py-2 hover:bg-gray-100 flex items-center cursor-pointer"
+                        onClick={ onToogle }
+                    >
                         <div className="text-red-600">
                             {
                                 isFavourite 
@@ -71,7 +81,7 @@ export const PokemonCard = ({ pokemon }: Props) => {
                             }
                             </p>
                         </div>
-                    </Link>
+                    </div>
 
                 </div>
             

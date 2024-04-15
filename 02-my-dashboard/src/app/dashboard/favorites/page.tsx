@@ -1,3 +1,4 @@
+import { FavoritePokemons } from "@/components";
 import { PokemonsGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
 
 
@@ -25,12 +26,13 @@ const getPokemons = async (limit = 20, offset = 0): Promise<SimplePokemon[]> => 
 
 export default async function PokemonsPage() {
 
+
  
   return (
     <div className="flex flex-col overflow-y-hidden">
 
       <span className="text-xl m-4 text-center">Pokemons favoritos <small className="text-cyan-700">( Estado global )</small></span>
-      <PokemonsGrid pokemons={[]} />
+      <FavoritePokemons />
     </div>
   );
 }
