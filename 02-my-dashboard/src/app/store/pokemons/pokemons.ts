@@ -35,7 +35,7 @@ const pokemonsSlice = createSlice({
         state[id] = pokemon;
       }
 
-      // No deberia hacerse en Redux
+      // No deberia hacerse en Redux, no es buena practica disparar efectos secundarios dentro del reducer.
       localStorage.setItem("favorite-pokemons", JSON.stringify( state ));
 
     },
