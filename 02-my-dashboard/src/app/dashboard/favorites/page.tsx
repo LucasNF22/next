@@ -1,5 +1,5 @@
 import { FavoritePokemons } from "@/components";
-import { PokemonsGrid, PokemonsResponse, SimplePokemon } from "@/pokemons";
+import { PokemonsResponse, SimplePokemon } from "@/pokemons";
 
 
 

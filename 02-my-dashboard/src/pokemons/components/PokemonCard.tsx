@@ -16,7 +16,7 @@ interface Props {
 export const PokemonCard = ({ pokemon }: Props) => {
 
     const { id, name } = pokemon;
-    const isFavourite = useAppSelector( state => !!state.pokemons[id] );  // La doble negacion convierte el valor a booleano
+    const isFavourite = useAppSelector( state => !!state.pokemons.favorites[id] );  // La doble negacion convierte el valor a booleano
     const dispatch = useDispatch()
 
     const onToogle = () => {
