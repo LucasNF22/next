@@ -18,7 +18,7 @@ export const TodoItem = ({ todo, toggleTodo }: Props) => {
     <div className={ todo.complete ? styles.todoDone : styles.todoPending }>
         <div className="flex flex-col sm:flex-row justify-start items-center gap-4">
             <div 
-                onClick={ ()=> toggleTodo( todo.id, !todo.complete ) }
+                onClick={ () => toggleTodo( todo.id, !todo.complete ) }
                 className={`
                     flex p-2 rounded-md cursor-pointer
                     hover:bg-opacity-60
