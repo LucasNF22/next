@@ -15,6 +15,7 @@ export const SidebarItem = ({ icon, path, title}: Props)  => {
 
     const pathName = usePathname();
 
+    
     return (
         <>
         {/* Active className: text-white bg-gradient-to-r from-sky-600 to-cyan-400 */}
