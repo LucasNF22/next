@@ -14,7 +14,6 @@ interface Props {
 export const SidebarItem = ({ icon, path, title}: Props)  => {
 
     const pathName = usePathname();
-
     
     return (
         <>
