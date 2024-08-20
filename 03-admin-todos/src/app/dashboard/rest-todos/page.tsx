@@ -17,9 +17,11 @@ export default async function RestTodosPage() {
   return (
     <div>
       <div className="w-full px-5 mx-5 pb-5">
+        
+        {/* Formulario para agregar todo */}
         <NewTodo />
+        
       </div>
-      {/* Formulario para agregar todo */}
       <TodosGrid todos={ todos } />
     </div>
   );

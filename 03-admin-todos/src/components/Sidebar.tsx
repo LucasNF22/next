@@ -50,7 +50,7 @@ export const Sidebar = () => {
                         width={100}
                         height={100}
                     />
-                    <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Cynthia J. Watts</h5>
+                    <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">Lucas N. Fiorentino</h5>
                     <span className="hidden text-gray-400 lg:block">Admin</span>
                 </div>
 
