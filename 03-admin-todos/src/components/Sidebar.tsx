@@ -21,7 +21,7 @@ const menuItems = [
     {   
         icon: <IoCalendarOutline />,
         title: 'Server Actions',
-        path: '/server-todos'
+        path: '/dashboard/server-todos'
     },
 ]
 
