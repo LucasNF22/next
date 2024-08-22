@@ -26,3 +26,21 @@ export const toggleTodo = async( id: string, complete: boolean): Promise<Todo> =
     return updatedTodo;
 
 }
+
+export const addTodo = async( description: string ) => {
+
+    try {
+       
+        const todo = await prisma.todo.create({ data: { description } })
+        revalidatePath('./dashboard/server-todos') //Revisa el path para cambiar solo lo que halla sido modificado
+        console.log('Todo creado desde el server');
+        
+        return todo;
+
+    } catch (error) {
+        return {
+            message: 'Error al crear el TODO'
+        }
+    }   
+}
+

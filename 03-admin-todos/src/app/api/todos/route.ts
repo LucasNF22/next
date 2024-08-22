@@ -40,8 +40,6 @@ export async function POST( request: Request ) {
     
 
     try {
-        
-        // const body = await postSchema.validate( await request.json() );
 
         const { description, complete} = await postSchema.validate( await request.json() ); // asi se evitan errores cuando se envian variables que no estan en el schema
         
