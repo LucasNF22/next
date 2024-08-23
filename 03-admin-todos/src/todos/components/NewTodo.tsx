@@ -7,7 +7,7 @@ import { IoTrashOutline } from "react-icons/io5";
 import { useRouter } from "next/navigation";
 
 import { addTodo } from "../actions/todo-actions"; // Server Action
-
+import { deleteCompleted } from "../actions/todo-actions"; // Server Action
 
 
 export const NewTodo = () => { 
@@ -26,12 +26,13 @@ export const NewTodo = () => {
     router.refresh(); // refresca la ruta para que se vea el todo cuando se crea
     }
     
-    const deleteCompleted = async() => {
+  //   const deleteCompleted = async() => {
       
-      // await todosApi.deleteCompletedTodos();
-      router.refresh(); // refresca la ruta para que se vea el todo cuando se crea
+      
+  //     // await todosApi.deleteCompletedTodos();
+  //     // router.refresh(); // refresca la ruta para que se vea el todo cuando se crea
 
-  };
+  // };
 
   return (
     <form onSubmit={ onSubmit } className='flex w-full'>
