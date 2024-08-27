@@ -21,7 +21,7 @@ export default async function ServerTodosPage() {
   const todos = await prisma.todo.findMany({ orderBy: { description: 'asc' } })
 
   return (
-    <>
+    <div className="bg-white p-5 rounded-md">
       <h1 className="text-3xl mb-10 ">Server Actions</h1>
 
       <div className="w-full px-5 mx-5 pb-5">
@@ -29,6 +29,6 @@ export default async function ServerTodosPage() {
       </div>
 
       <TodosGrid todos={todos} />
-    </>
+    </div>
   );
 }
