@@ -7,7 +7,7 @@ import { useState } from "react";
 
 interface Props {
     currentTab? : number;
-    tabOptions: number[];
+    tabOptions?: number[];
 }
 
 
