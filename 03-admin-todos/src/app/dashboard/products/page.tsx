@@ -1,3 +1,4 @@
+import { products } from "@/data/products/products";
 import { ProductCard } from "@/products";
 
 
@@ -10,7 +11,14 @@ export default function ProductsPage() {
 
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
 
-                <ProductCard />
+                {
+                    products.map( (product) => (
+
+                        <ProductCard  key={ product.id } { ...product }/>
+
+                    ))
+                }
+
 
             </div>
 
