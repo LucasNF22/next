@@ -3,7 +3,7 @@
 
 import Image from "next/image";
 
-import { Product } from "@/data/products/products";
+import type { Product } from "@/data/products/products";
 
 import { IoAddCircleOutline, IoRemove } from "react-icons/io5";
 import {  } from "../actions/actions";
