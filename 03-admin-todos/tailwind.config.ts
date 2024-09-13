@@ -7,6 +7,8 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/todos/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/products/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/shopping-cart/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/dashboard/cookies/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {

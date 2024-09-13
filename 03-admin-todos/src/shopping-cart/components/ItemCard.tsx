@@ -6,7 +6,7 @@ import Image from "next/image";
 import type { Product } from "@/data/products/products";
 
 import { IoAddCircleOutline, IoRemove } from "react-icons/io5";
-import {  } from "../actions/actions";
+import { addProductToCart, removeSingleItemFromCart } from "../actions/actions";
 
 import { useRouter } from "next/navigation";
 
@@ -20,18 +20,18 @@ export const ItemCard = ({ product, quantity }: Props) => {
   
   const router = useRouter();
 
-  function onAddToCart() {
-    //TODO: addProductToCart(product.id);
+   const onAddToCart = () =>{
+    addProductToCart(product.id)
     router.refresh();
-  }
+  };
 
   function onRemoveItem() {
-    //TODO: removeSingleItemFromCart(product.id);
+    removeSingleItemFromCart(product.id)
     router.refresh();
   }
 
   return (
-    <div className="flex items-center shadow rounded-lg w-full bg-gray-800 border-gray-100">
+    <div className="flex items-center shadow rounded-lg w-full bg-gray-600 border-gray-100 ">
       
       {/* Product Image */}
       <div className="p-2">
