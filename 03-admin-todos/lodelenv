@@ -1,6 +1,6 @@
-/ XTAUTH_SECRET=f5e7671d0971729f29983f952281db6f
+/ XTAUTH f5e7671d0971729f29983f952281db6f
 
-/ OGLE_CLIENT_ID="415106056482-v9c3uhbg7om36hh9pp06vi9fed77e  u2g.a  pps.googl   eusercont   ent.co  m"
-/ OGLE_SECRET="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"
-/ THUB_ID="Ov23lirQ04DR5cev0kRT"
-/ THUB_SECRET="1cb4d0b4fb1a66931cfedc2138160f7e9186edb0git"
+/ OGLE_CLIENT "415106056482-v9c3uhbg7om36hh9pp06vi9fed77e  u2g.a  pps.googl   eusercont   ent.co  m"
+/ OGLE_  "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"
+/ THUB_ID "Ov23lirQ04DR5cev0kRT"
+/ THUB_ ="1cb4d0b4fb1a66931cfedc2138160f7e9186edb0git"
