@@ -38,18 +38,37 @@ export const authOptions:NextAuthOptions = {
     },
 
     async jwt({ token, user, account, profile}) {
-      console.log(token);
+      
+      // console.log('token ----------->');
+      // console.log(token);
+      // console.log('<----------- token');
+      
+      const dbUser = await prisma.user.findUnique({ where: { email: token.email ?? 'no email'}}) // se puede forzar con token.email! porque siempre deberia haber email.
 
-      const dbUser = await prisma.user.findUnique({ where: { email: token.email ?? ''}}) // se puede forzar con token.email! porque siempre deberia haber email.
+      if( dbUser?.isActive === false ) {
+        throw Error('Usuario bloqueado en sistema')
+      }
 
-      token.rolen = dbUser?.roles ?? ['no-roles']
-      token.rolen = dbUser?.roles ?? ['no-uuid']
+      token.roles = dbUser?.roles ?? ['no-roles']
+      token.id = dbUser?.id ?? 'no-uuid'
 
       return token;
     },
 
 
     async session ({ session, user, token }) {
+
+      console.log(session.user);
+      
+
+      console.log('token ----------->');
+      console.log(token);
+      console.log('<----------- token');
+
+      if( session && session.user ){
+        session.user.roles = token.roles
+        session.user.id = token.id
+      }
 
       return session;
     }

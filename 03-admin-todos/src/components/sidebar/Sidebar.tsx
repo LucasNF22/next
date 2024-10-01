@@ -50,7 +50,7 @@ export const Sidebar = async() => {
 
     const userName = session?.user?.name ?? 'User not found'
 
-    //TODO const userRole = session?.user?.name ?? 'User not found'
+    const userRole = session?.user?.roles ?? ['User roles not found']
     
     const userImage = (session?.user?.image) 
         ? session.user.image
@@ -81,7 +81,9 @@ export const Sidebar = async() => {
                         height={100}
                     />
                     <h5 className="hidden mt-4 text-xl font-semibold text-gray-600 lg:block">{userName}</h5>
-                    <span className="hidden text-gray-400 lg:block">Admin</span>
+                    <span className="hidden text-gray-400 lg:block capitalize">
+                        { userRole.join(' - ') }
+                    </span>
                 </div>
 
                 <ul className="space-y-2 tracking-wide mt-8">                  

@@ -19,6 +19,8 @@ export default function ProfilePage()  {
 
             <div className="flex flex-col ">
                 <span>Nombre: { session?.user?.name ?? 'No Name' }</span>
+                <span>Perfil Usuario: { session?.user?.roles?.join(', ') ?? ['No Role']}</span>
+                <span>ID: { session?.user?.id ??' No ID'}</span>
                 <span>Email: { session?.user?.email ?? 'No Email' }</span>
                 <span>Imagen: { session?.user?.image ?? 'No Image' }</span>
             </div>

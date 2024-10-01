@@ -20,7 +20,9 @@ export default async function DashboardPage() {
         <WidgetItem title="Usuario conectado - Server Side">
           <div className="flex flex-col">
             <span>{ session.user?.name }</span>
+            <span>{ "----------" }</span>
             <span>{ session.user?.image }</span>
+            <span>{ "----------" }</span>
             <span>{ session.user?.email }</span>
             <span>{ '-----------------' }</span>
 
