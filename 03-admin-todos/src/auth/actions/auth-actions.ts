@@ -15,8 +15,11 @@ export const signInEmailPassword = async( email: string, password: string) => {
         return dbUser
     }
 
-    if( bcrypt.compareSync( password, user.password ?? '' ))
+    if( bcrypt.compareSync( password, user.password ?? '' )){
+        return null
+    }
 
+    return user;
 }
 
 
@@ -30,5 +33,5 @@ const createUser = async( email: string, password: string ) => {
         }
     })
 
-    return user.
+    return user
 }
