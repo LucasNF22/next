@@ -1,5 +1,6 @@
 'use server'
 
+import { getUserSessionServer } from "@/auth/actions/auth-actions";
 import prisma from "@/lib/prisma";
 import { Todo } from "@prisma/client";
 import { revalidatePath } from "next/cache";
@@ -38,15 +39,18 @@ export const toggleTodo = async( id: string, complete: boolean): Promise<Todo> =
 
 }
 
-export const addTodo = async( description: string ) => {
+export const addTodo = async( description: string, userId: string ) => {
 
+    const user = await getUserSessionServer();
     try {
-       
-        const todo = await prisma.todo.create({ data: { description } })
-        revalidatePath('./dashboard/server-todos') //Revisa el path para cambiar solo lo que halla sido modificado
-        console.log('Todo creado desde el server');
-        
-        return todo;
+        if( user ){
+
+            const todo = await prisma.todo.create({ data: { description, userId: userId } }) // revisar lo que hice
+            revalidatePath('./dashboard/server-todos') //Revisa el path para cambiar solo lo que halla sido modificado
+            console.log('Todo creado desde el server');
+            
+            return todo;
+        }
 
     } catch (error) {
         return {

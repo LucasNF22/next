@@ -13,6 +13,10 @@ model Todo {
   complete    Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
+
+  user User @relation( fields: [userId], references: [id] ) // Crea la relacion con la tabla de usuario, usando como relacion la columna userId y como referencia el id
+  userId String  // crea la columna para la relacion con la table de usuario
+
 }
 
 
@@ -60,6 +64,8 @@ model User {
     
   accounts      Account[]
   sessions      Session[]
+
+  todos         Todo[] // relacion 1 a muchos
 
  
   @@map("users")

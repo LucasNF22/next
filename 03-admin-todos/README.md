@@ -18,6 +18,9 @@ docker compose up -d
 7. Ejecutar el SEED [crear la base de datos](localhost:3000/api/seed)
 
 
+## Nota: Usuario por defecto
+__usuario:__ test1@gmail.com
+__password:__ 123456
 
 
 
