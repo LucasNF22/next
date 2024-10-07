@@ -3,7 +3,7 @@
 import { FormEvent, useState } from "react";
 import { IoTrashOutline } from "react-icons/io5";
 
-// import * as todosApi from '@/todos/helpers/todos';
+import * as todosApi from '@/todos/helpers/todos';
 import { useRouter } from "next/navigation";
 
 import { addTodo } from "../actions/todo-actions"; // Server Action
@@ -18,13 +18,18 @@ export const NewTodo = () => {
   const onSubmit = async( e: FormEvent ) => {
 
     e.preventDefault();
+
     if( description.trim().length === 0 ) return;
 
-    // todosApi.createTodo( description ); // Se crea el toedo con la descripcion
-    await addTodo( description )
+    await todosApi.createTodo(description)
     setDescription( '' ); // Setea la description en vacio
     router.refresh(); // refresca la ruta para que se vea el todo cuando se crea
-    }
+
+
+
+    // // todosApi.createTodo( description ); // Se crea el todo con la descripcion
+    // await addTodo( description )
+
     
   //   const deleteCompleted = async() => {
       
@@ -32,7 +37,7 @@ export const NewTodo = () => {
   //     // await todosApi.deleteCompletedTodos();
   //     // router.refresh(); // refresca la ruta para que se vea el todo cuando se crea
 
-  // };
+  };
 
   return (
     <form onSubmit={ onSubmit } className='flex w-full'>

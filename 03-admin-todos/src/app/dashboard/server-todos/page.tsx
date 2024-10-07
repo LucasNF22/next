@@ -20,7 +20,7 @@ export default async function ServerTodosPage() {
   const user = await getUserSessionServer();
 
   if( !user ){
-    redirect('/api/auth/sigin')
+    redirect('/api/auth/signin')
   }
 
   const todos  = await prisma.todo.findMany({ 
